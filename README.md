@@ -17,6 +17,8 @@ npm install -g ntrace
 
 Use
 -------
+```
 ./ntrace.js --url=<www.url.com> --https=<yes or no>
 
 ./ntrace.js --url=www.google.com https=yes
+```

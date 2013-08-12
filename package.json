@@ -1,19 +1,28 @@
 {
-  "name": "ntrace",
-  "subdomain": "ntrace",
+  "name": "nTrace",
   "version": "0.0.1",
-  "engines": {
-    "node": "0.8.x"
+  "description": "Cross-site Tracing vulnerability assessment tool.",
+  "main": "ntrace.js",
+  "bin": {
+    "ntrace": "./bin/ntrace.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gabemarshall/ntrace"
+  },
+  "keywords": [
+    "security",
+    "trace",
+    "pentest",
+    "xst",
+    "xss"
+  ],
+  "author": "gabemarshall",
+  "license": "GPLv3",
+  "readmeFilename": "README.md",
   "dependencies": {
     "util": "*",
     "argv": "*",
+    "optimist": "*",
     "colors": "*"
-  },
-  "env": {
-    "npm_config_rebuild_bundle": true,
-    "npm_config_production": true
   }
-}
-
-
