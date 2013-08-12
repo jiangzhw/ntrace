@@ -1,5 +1,5 @@
 {
-  "name": "nTrace",
+  "name": "ntrace",
   "version": "0.0.1",
   "description": "Cross-site Tracing vulnerability assessment tool.",
   "main": "ntrace.js",

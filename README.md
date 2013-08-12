@@ -12,7 +12,7 @@ Install
 git clone git://github.com/gabemarshall/ntrace.git
 
 ```
-npm install -g ntrace
+npm install ntrace
 ```
 
 Use
