@@ -34,9 +34,14 @@ if (siteUrl) {
 			console.log('HEADERS: ' + JSON.stringify(res.headers));
 			res.setEncoding('utf8');
 			res.on('data', function(chunk) {
-
+				console.log('testing')
 			});
 		});
+
+req.on('error', function(e) {
+  console.log('Great! \nThere was a problem with the request meaning TRACE is definitely not supported.'.green);
+  console.log('Error:'.yellow + ' \"' + e.message +'\"');
+});
 
 		req.end();
 	} catch (err) {
