@@ -1,0 +1,19 @@
+{
+  "name": "ntrace",
+  "subdomain": "ntrace",
+  "version": "0.0.1",
+  "engines": {
+    "node": "0.8.x"
+  },
+  "dependencies": {
+    "util": "*",
+    "argv": "*",
+    "colors": "*"
+  },
+  "env": {
+    "npm_config_rebuild_bundle": true,
+    "npm_config_production": true
+  }
+}
+
+
