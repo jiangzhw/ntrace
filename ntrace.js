@@ -26,9 +26,9 @@ if (siteUrl) {
 	try {
 		var req = http.request(options, function(res) {
 			if (res.statusCode === 200) {
-				console.log('Uh oh: Site responded with a 200 Okay and is susceptible to XST'.red)
+				console.log('VULNERABLE: Site responded with a 200 Okay and is susceptible to XST'.red)
 			} else {
-				console.log('Whew!: This site does not appear to be susceptible to XST'.green)
+				console.log('SAFE: This site does not appear to be susceptible to XST'.green)
 			}
 			console.log('STATUS: ' + res.statusCode);
 			console.log('HEADERS: ' + JSON.stringify(res.headers));
@@ -39,7 +39,7 @@ if (siteUrl) {
 		});
 
 req.on('error', function(e) {
-  console.log('Great! \nThere was a problem with the request meaning TRACE is definitely not supported.'.green);
+  console.log('SAFE: \nThere was a problem with the request meaning TRACE is definitely not supported.'.green);
   console.log('Error:'.yellow + ' \"' + e.message +'\"');
 });
 

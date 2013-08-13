@@ -22,3 +22,15 @@ Use
 
 ./ntrace.js --url=www.google.com https=yes
 ```
+
+Expected Response(s)
+-------
+```
+VULNERABLE: Site responded with a 200 Okay and is susceptible to XST
+```
+```
+SAFE: This site does not appear to be susceptible to XST
+```
+```
+SAFE: There was a problem with the request meaning TRACE is definitely not supported (error message will be appended, typically socket hangup).
+```

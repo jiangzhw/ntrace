@@ -17,7 +17,7 @@
     "xst",
     "xss"
   ],
-  "author": "gabemarshall",
+  "author": "gabemarshall <gabemarshall@me.com> http://www.gabemarshall.me",
   "license": "GPLv3",
   "readmeFilename": "README.md",
   "dependencies": {
