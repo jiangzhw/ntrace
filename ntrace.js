@@ -30,18 +30,16 @@ if (siteUrl) {
 			} else {
 				console.log('SAFE: This site does not appear to be susceptible to XST'.green)
 			}
-			console.log('STATUS: ' + res.statusCode);
-			console.log('HEADERS: ' + JSON.stringify(res.headers));
-			res.setEncoding('utf8');
+
 			res.on('data', function(chunk) {
-				console.log('testing')
+
 			});
 		});
 
-req.on('error', function(e) {
-  console.log('SAFE: \nThere was a problem with the request meaning TRACE is definitely not supported.'.green);
-  console.log('Error:'.yellow + ' \"' + e.message +'\"');
-});
+		req.on('error', function(e) {
+			console.log('SAFE: \nThere was a problem with the request meaning TRACE is definitely not supported.'.green);
+			console.log('Error:'.yellow + ' \"' + e.message + '\"');
+		});
 
 		req.end();
 	} catch (err) {
@@ -50,4 +48,3 @@ req.on('error', function(e) {
 } else {
 	console.log('Missing parameters --url and --https (Ex: --url=www.site.com --https=no'.red);
 }
-
