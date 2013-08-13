@@ -1,10 +1,10 @@
 {
   "name": "ntrace",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Cross-site Tracing vulnerability assessment tool.",
   "main": "ntrace.js",
   "bin": {
-    "ntrace": "./bin/ntrace.js"
+    "ntrace": "./ntrace.js"
   },
   "repository": {
     "type": "git",

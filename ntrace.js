@@ -51,7 +51,3 @@ req.on('error', function(e) {
 	console.log('Missing parameters --url and --https (Ex: --url=www.site.com --https=no'.red);
 }
 
-
-
-// console.log(sitePort);
-// console.log(siteUrl);
