@@ -9,8 +9,10 @@ nTrace is a command-line security tool to detect Cross-Site Tracing (XST) vulner
 Install
 -------
 
-
-
+```
+npm install -g ntrace
+```
+OR
 ```
 git clone git://github.com/gabemarshall/ntrace.git
 ```
