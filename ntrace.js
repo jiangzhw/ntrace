@@ -6,10 +6,9 @@ var http = require('http');
 var colors = require('colors');
 
 var siteUrl = argv.url;
-var sslBool = argv.https;
 var sitePort;
 
-if (sslBool === 'yes') {
+if (argv.https === 'yes') {
 	sitePort = 443;
 } else {
 	sitePort = 80;
@@ -19,6 +18,9 @@ var options = {
 	host: siteUrl,
 	port: sitePort,
 	path: '/',
+	headers: {
+		'CustomHeaderCheck': '1337'
+	},
 	method: 'TRACE'
 };
 
@@ -26,9 +28,16 @@ if (siteUrl) {
 	try {
 		var req = http.request(options, function(res) {
 			if (res.statusCode === 200) {
-				console.log('VULNERABLE: Site responded with a 200 Okay and is susceptible to XST'.red)
+				var headers = res.headers;
+				// Check to see if the response includes the custom header we sent
+				// If it does, then the site is vulnerable to XST
+				if (headers.CustomHeaderCheck) {
+					console.log('VULNERABLE: Site responded with our custom header meaning it is susceptible to XST attacks'.red);
+				} else {
+					console.log('SAFE: This site does not appear to be susceptible to XST'.green);
+				}
 			} else {
-				console.log('SAFE: This site does not appear to be susceptible to XST'.green)
+				console.log('SAFE: This site does not appear to be susceptible to XST'.green);
 			}
 
 			res.on('data', function(chunk) {
@@ -37,7 +46,8 @@ if (siteUrl) {
 		});
 
 		req.on('error', function(e) {
-			console.log('SAFE: \nThere was a problem with the request meaning TRACE is definitely not supported.'.green);
+			console.log('There was a problem with the request, which might mean TRACE is not supported.'.yellow);
+			console.log('To be safe, try the request again and change the --https flag'.yellow);
 			console.log('Error:'.yellow + ' \"' + e.message + '\"');
 		});
 

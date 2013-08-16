@@ -1,10 +1,14 @@
-nTrace 0.0.4
+nTrace 0.0.5
 ======
 
 About
 -------
 
 nTrace is a command-line security tool to detect Cross-Site Tracing (XST) vulnerabilities, written in node. An XST attack is typically used in conjunction with an XSS attack, making it additionally devestating.
+
+8-16-13
+
+Updated the TRACE request to also include a custom header. nTrace will then look for that same header in the response to determine whether or not the site is truly vulnerable to XST attacks.
 
 Install
 -------
@@ -28,11 +32,13 @@ Use
 Expected Response(s)
 -------
 ```
-VULNERABLE: Site responded with a 200 Okay and is susceptible to XST
+VULNERABLE: Site responded with our custom header meaning it is susceptible to XST attacks
 ```
 ```
 SAFE: This site does not appear to be susceptible to XST
 ```
 ```
-SAFE: There was a problem with the request meaning TRACE is definitely not supported (error message will be appended, typically socket hangup).
+There was a problem with the request, which might mean TRACE is not supported.
+To be safe, try the request again and change the --https flag
+(error message will be appended, typically socket hangup).
 ```
